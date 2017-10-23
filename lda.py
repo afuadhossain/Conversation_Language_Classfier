@@ -3,11 +3,9 @@ import pandas as pd
 import numpy as np
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 
-x = io.open('train_set_x.csv', 'r', encoding='utf-8')
-y = io.open('train_set_y.csv', 'r', encoding='utf-8')
 counts = io.open('charcounts.csv', 'r', encoding='utf-8')
 
-train_df = pd.read_csv('KNN_probs.csv')
+train_df = pd.read_csv('training_vector_probs.csv')
 y_df = train_df['class']
 del train_df['class']
 del train_df['ID']
