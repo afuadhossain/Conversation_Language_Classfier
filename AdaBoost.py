@@ -8,7 +8,7 @@ from sklearn.ensemble import AdaBoostClassifier
 
 counts = io.open('charcounts.csv', 'r', encoding='utf-8')
 
-train_df = pd.read_csv('KNN_probs.csv')
+train_df = pd.read_csv('training_vector_probs.csv')
 y_df = train_df['class']
 del train_df['class']
 del train_df['ID']
