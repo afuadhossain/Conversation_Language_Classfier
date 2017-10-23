@@ -3,7 +3,7 @@ import io
 x = io.open('train_set_x.csv', 'r', encoding='utf-8')
 y = io.open('train_set_y.csv', 'r', encoding='utf-8')
 counts = io.open('charcounts.csv', 'r', encoding='utf-8')
-output = io.open('KNN_probs.csv', 'w', encoding='utf-8')
+output = io.open('training_vector_probs.csv', 'w', encoding='utf-8')
 
 counts.readline()
 x.readline()
