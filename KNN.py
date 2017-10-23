@@ -169,7 +169,7 @@ def readTestData(filename):
 
 
 if __name__ == '__main__':
-    X,y = readTrainingData("KNN_probs.csv")
+    X,y = readTrainingData("training_vector_probs.csv")
     X_test = readTestData("test_vector_probs.csv")
     '''
     To run cross validation you can run the following
