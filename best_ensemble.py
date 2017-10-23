@@ -22,7 +22,7 @@ y.readline()
 for line in x:
   splitline = line.split(',')
   yr = y.readline().split(',')
-  
+
   utt = splitline[1].replace(u" ", "").lower()
   for c in utt:
     if c == u'\n':
@@ -36,7 +36,7 @@ y.close()
 
 
 
-t.readline() 
+t.readline()
 #several data structures
 totprobs = {}
 best = {}
@@ -54,7 +54,7 @@ y.readline()
 for line in x:
   splitline = line.split(',')
   yr = y.readline().split(',')
-  
+
   utt = splitline[1][:-1].replace(u" ", "").lower()
   if len(utt) < 20:
       utt = ''.join(sorted(utt)) #sorted utterance means character order is irrelevant
@@ -70,8 +70,8 @@ y.close()
 for line in t:
   splitline = line.split(u',')
   lineid = splitline[0]
-  
-  testprobs = 5*[0]  
+
+  testprobs = 5*[0]
   #first classification - bruteforce short examples
   if len(splitline[1][:-1]) < 20:
     shortstr = ''.join(sorted(splitline[1][:-1].replace(u' ','')))
@@ -84,10 +84,10 @@ for line in t:
     latinonly[int(lineid)] = splitline[1][:-1].replace(u' ', '')
     continue
   linechars = splitline[1][:-1].split(u' ')
-  i = 0  
-  
+  i = 0
+
   #calculate naive bayes for all 5 languages
-  while i < 5:  
+  while i < 5:
     pyx = langprobs[i]
 
     for char in linechars:
@@ -115,7 +115,7 @@ y = io.open('train_set_y.csv', 'r', encoding='utf-8')
 x.readline()
 y.readline()
 dd = []
-    
+
 for line in x:
   splitline = line.split(',')
   yr = y.readline().split(',')
@@ -157,14 +157,15 @@ y.close()
 fvecx = []
 fvecy = []
 alphanum = string.ascii_lowercase + string.digits
-for line in trainingx:
-  sline = line.split(',')
-  chars = sline[1][:-1].split(' ')
-  vx = 36*[0]
-  for c in chars:
-    vx[alphanum.index(c)] += 1 #increment character count by one for each appearance
-  fvecx.append(vx[:]) #add to training vectors (x)
-  fvecy.append(trainingy.readline().split(',')[1][:-1]) #add to training vectors (y)
+for itr in range(1,len(trainingx)):
+    line = trainingx[itr]
+    sline = line.split(',')
+    chars = sline[1][:-1].split(' ')
+    vx = 36*[0]
+    for c in chars:
+        vx[alphanum.index(c)] += 1 #increment character count by one for each appearance
+    fvecx.append(vx[:]) #add to training vectors (x)
+    fvecy.append(trainingy[itr].split(',')[1][:-1]) #add to training vectors (y)
 
 #fit the vectors on the svm
 clf = svm.SVC(cache_size=1000)
@@ -187,6 +188,3 @@ result.write('Id,Category\n')
 for lid in sorted(best.keys()):
   result.write(str(lid) + ',' + best[lid] + '\n')
 result.close()
-
-
-
