@@ -28,7 +28,8 @@ Now for running the classification algorithms:
    
    
 3) Run one of the classification algorithms
-     K-nearest-neighbors: python KNN.py 
+     
+    K-nearest-neighbors: python KNN.py 
        
 	-runs a k-nearest neighbors with default value k = 17 (but can be changed by going into the code)  
         -17 was optimized by cross-validation   
