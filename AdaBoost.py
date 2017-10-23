@@ -18,7 +18,7 @@ Y = y_df.values.transpose()
 
 
 
-clf = AdaBoostClassifier(n_estimators=400)
+clf = AdaBoostClassifier(n_estimators=200)
 clf.fit(X,Y)
 
 test = pd.read_csv('test_vector_probs.csv')
