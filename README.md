@@ -12,9 +12,10 @@ Additionally there is a testing data set contained in the file test_set_x.csv wh
 
 
 Before running the package the following packages need to be installed using pip
+
       pip install pandas
       pip install numpy
-      pip install scikit
+      pip install sklearn
       
 Now for running the classification algorithms:
 1) Run charcountsgenerator.py 
