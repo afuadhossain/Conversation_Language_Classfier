@@ -1,5 +1,4 @@
-# COMP551_A2
-Language Classifier
+# Conversation Language Classifier
 
 
 This Package is built for language classification of 5 languages (0 = Slovak, 1 = French, 2 = Spanish,3 = German, 4 = Polish) on a dataset of short utterances provided by training_set_x.csv and training_set_y.csv. 
